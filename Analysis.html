@@ -54,7 +54,7 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <div id="header">
 <h1 class="title">NOAA Storm Database Analysis - Most harmful Events</h1>
 <h4 class="author"><em>Armin Wallrab</em></h4>
-<h4 class="date"><em>March 22nd 2015</em></h4>
+<h4 class="date"><em>April 26th 2015</em></h4>
 </div>
 
 
@@ -81,8 +81,18 @@ if (window.hljs && document.readyState && document.readyState === "complete") {
 <div id="data-processing" class="section level2">
 <h2>Data Processing</h2>
 <p>We use the dplyr library to subset and correct the data</p>
-<pre class="r"><code>library(dplyr)
-d &lt;- read.csv(bzfile(&quot;repdata_data_StormData.csv.bz2&quot;))
+<pre class="r"><code>library(dplyr)</code></pre>
+<pre><code>## 
+## Attaching package: 'dplyr'
+## 
+## The following object is masked from 'package:stats':
+## 
+##     filter
+## 
+## The following objects are masked from 'package:base':
+## 
+##     intersect, setdiff, setequal, union</code></pre>
+<pre class="r"><code>d &lt;- read.csv(bzfile(&quot;repdata_data_StormData.csv.bz2&quot;))
 ## reduce the data set
 # select only relevant rows &amp; columns
 d &lt;- d %&gt;% select(EVTYPE, FATALITIES, INJURIES, PROPDMG, PROPDMGEXP, CROPDMG, CROPDMGEXP) %&gt;%
